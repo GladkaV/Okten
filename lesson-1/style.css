@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+.title {
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-align: center;
+}
+.list {
+    margin-bottom: 30px;
+    list-style: decimal;
+}
+.users {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+}
+.users h2 {
+    text-align: center;
+}
+.users img {
+    max-height: 270px;
+    display: block;
+    margin: 0 auto;
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.product-card {
+    border: 1px solid #000;
+}
+.products img {
+    max-width: 200px;
+    max-height: 184px;
+}
