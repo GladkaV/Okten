@@ -17,22 +17,22 @@ function getCylinderArea(radius, height) {
 console.log(getCylinderArea(7, 5));
 
 // створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
-function returnMinNumber(arr = [0]) {
-    let resultMin = arr[0];
-    let resultMax = arr[0];
+function returnMinNumber() {
+    let resultMin = arguments[0];
+    let resultMax = arguments[0];
 
-    arr.forEach(item => {
-        if (item > resultMax) {
-            resultMax = item;
-        } else if (item < resultMin) {
-            resultMin = item;
+    for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] > resultMax) {
+            resultMax = arguments[i];
+        } else if (arguments[i] < resultMin) {
+            resultMin = arguments[i];
         }
-    });
+    }
 
     console.log(`Наибольшее число - ${resultMax}`);
     return `Наименьшее число - ${resultMin}`;
 }
-console.log(returnMinNumber([-9, -3, -10, 2, 480, 27]));
+console.log(returnMinNumber(-2, 47, 11, -27, 99));
 
 // створити функцію яка  створює блок з текстом. Текст задати через аргумент
 function creativeBlock(text) {
@@ -213,7 +213,7 @@ console.log(changeIndex( [9, 8, 0, 4], 0 ));
 // let n2 = 'Ron Whisley'
 // let n3 = 'Hermione Granger'
 function nameСorrection(string) {
-    return string.replace(/ +/g, ' ');
+    return string.replace(/ +/g, ' ').trim();
 }
 console.log(nameСorrection('    Harry       Potter      '));
 
