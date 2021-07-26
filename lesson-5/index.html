@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5</title>
+
+    <style>
+        .title {
+            margin-top: 40px;
+        }
+        #products label {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            max-width: 600px;
+            margin-bottom: 10px;
+            padding: 0 10px 5px;
+            border-bottom: 1px solid #000;
+        }
+        a {
+            color: #000;
+            margin-top: 20px;
+            display: inline-block;
+            border: 1px solid #000;
+            text-decoration: none;
+            padding: 10px;
+            background-color: lightgray;
+        }
+        .wrap-users {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="getName" action="index2.html">
+        <input type="text" name="name" >
+        <button>Save</button>
+    </form>
+
+    <h2 class="title">products</h2>
+    <form id="products">
+        <label>
+            назва товару
+            <input type="text" name="name">
+        </label>
+        <label>
+            кількість товару
+            <input type="number" step="1" name="quantity" min="1" value="1">
+        </label>
+        <label>
+            ціна товару
+            <input type="number" step="1" name="price" min="1" value="100">
+        </label>
+        <label>
+            картинка товару (посилання з інтернету)
+            <input type="text" name="src">
+        </label>
+        <button>Save</button>
+    </form>
+    <a href='list.html'>List products</a>
+
+    <div class="wrap-users">
+        
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

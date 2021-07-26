@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List products</title>
+</head>
+<body>
+    <h1>List products</h1>
+
+    <button class="btn-cleanList">Clean list</button>
+    <ul class="list"></ul>
+
+    <script>
+        let listHTML = document.querySelector('.list');
+        let listJson = JSON.parse(localStorage.getItem('goods'));
+
+        listJson.forEach((product, index) => {
+            let li = document.createElement('li');
+            li.setAttribute('id', index);
+            li.innerHTML = `<button class="btn-remove" onclick="remove(event)">X</button>
+                            <h3>Name - ${product.name}</h3>
+                            <p>Quantity - ${product.quantity}</p>
+                            <p>Price - ${product.price}</p>
+                            <img src="${product.src}" alt="">`;
+            listHTML.append(li);
+        });
+
+        let btnRemove = document.querySelector('.btn-remove');
+        function remove() {
+            let element = event.target.closest('li');
+            let idElement = element.getAttribute('id');
+
+            element.remove();
+            listJson.splice(idElement, 1);
+            localStorage.setItem('goods', JSON.stringify(listJson));
+        }
+
+        let btnCleanList = document.querySelector('.btn-cleanList');
+        btnCleanList.addEventListener('click', function () {
+            listHTML.innerHTML = ``;
+            localStorage.removeItem('goods');
+        })
+    </script>
+</body>
+</html>
